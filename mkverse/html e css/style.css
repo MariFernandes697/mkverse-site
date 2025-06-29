@@ -233,7 +233,7 @@ canvas {
 }
 
 /* Para celulares e telas pequenas */
-@media (max-width: 480px) {
+@media (max-width: 487px) {
     header {
         padding: 10px 15px;
     }
@@ -263,8 +263,9 @@ canvas {
 
     .conteudo-banner .txt p {
         font-size: 16px; /* Fonte menor para celulares */
-         padding-bottom: 20px;
+        padding-bottom: 20px;
     }
+    
 
     .btn-mkverse {
         padding: 10px 20px; /* Botão menor */
