@@ -263,6 +263,7 @@ canvas {
 
     .conteudo-banner .txt p {
         font-size: 16px; /* Fonte menor para celulares */
+         padding-bottom: 20px;
     }
 
     .btn-mkverse {
