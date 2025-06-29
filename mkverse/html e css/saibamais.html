@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Estilos para a Página "Saiba Mais" --- */
+:root{
+    --cor000: #000001;
+    --cor001: #01021a;
+    --cor002: #795dff;
+    --cor003: #b627d4;
+    --cor004: #00aeef; 
+}
+.saiba-mais-content {
+    color: #fff;
+    background: var(--cor001); /* Fundo similar ao do banner */
+    min-height: 100vh; /* Garante que a página ocupe pelo menos a altura da tela */
+}
+
+.saiba-mais-content .container {
+    max-width: 1000px; /* Largura máxima para o conteúdo central */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px;
+}
+.saiba-mais-content h1{
+    padding-top: 180px;
+}
+
+.saiba-mais-content h1,
+.saiba-mais-content h2 {
+    color: var(--cor004); /* Cor azul vibrante para títulos */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-family: 'Inconsolata', monospace;
+    
+}
+
+.saiba-mais-content h2 {
+    font-size: 2em;
+    margin-top: 60px;
+}
+
+.saiba-mais-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #e0e0e0;
+}
+
+/* Seção de Introdução */
+.introducao-saiba-mais {
+    height: 730px;
+    background-image: url(assets/Materiais\ da\ Marca.png);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    margin-bottom: 40px;
+    padding: 40px;
+}
+
+/* Cartões das Desenvolvedoras */
+.equipe-mkverse {
+    padding: 40px 0;
+}
+
+.desenvolvedora-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: rgba(30, 0, 50, 0.4); /* Fundo um pouco mais escuro e transparente */
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.desenvolvedora-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 0, 255, 0.4);
+}
+
+.desenvolvedora-card:nth-child(even) { /* Para alinhar alternadamente, se desejar */
+    flex-direction: row-reverse;
+}
+
+.dev-img {
+    flex-shrink: 0; /* Evita que a imagem encolha */
+    width: 200px; /* Largura fixa para a imagem */
+    height: 200px; /* Altura fixa para a imagem */
+    border-radius: 50%; /* Torna a imagem redonda */
+    overflow: hidden; /* Garante que a imagem se ajuste ao círculo */
+    border: 3px solid var(--cor002); /* Borda com cor tema */
+    box-shadow: 0 0 15px rgba(121, 93, 255, 0.6);
+}
+
+.dev-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+.dev-info {
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+.dev-info h3 {
+    color: var(--cor004);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: left; /* Alinha o nome à esquerda */
+}
+
+.dev-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.dev-habilidades {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dev-habilidades li {
+    background-color: var(--cor003); /* Cor roxa para as habilidades */
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+/* --- Seção de Serviços --- */
+.services-section {
+    padding-top: 0px;/* Padding superior e inferior, e lateral */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px ;
+    background: var(--cor001); /* Fundo escuro */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    text-align: center;
+    position: relative; /* Para o pseudo-elemento de fundo */
+    overflow: hidden; /* Garante que o pseudo-elemento não vaze */
+}
+
+/* Pseudo-elemento para o fundo embaçado similar à imagem */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/WhatsApp\ Image\ 2025-06-29\ at\ 16.46.45.jpeg') no-repeat center center/cover; /* Substitua 'assets/code-background.jpg' por uma imagem de fundo de código similar à sua */
+    filter: blur(1px) brightness(0.9); /* Embaça e escurece a imagem */
+    z-index: 0;
+    opacity: 0.3; /* Ajuste a opacidade para não ficar muito forte */
+}
+
+
+.services-section h2 {
+    color: #fff; /* Título branco */
+    font-size: 2.8em;
+    margin-bottom: 60px;
+    position: relative; /* Para ficar acima do pseudo-elemento */
+    z-index: 1; /* Garante que o título esteja acima do pseudo-elemento de fundo */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+    gap: 30px; /* Espaçamento entre os itens */
+    max-width: 1000px; /* Largura máxima da grade */
+    margin: 0 auto; /* Centraliza a grade */
+    position: relative; /* Para ficar acima do pseudo-elemento de fundo */
+    z-index: 1; /* Garante que a grade esteja acima do pseudo-elemento de fundo */
+}
+
+.service-item {
+    background: rgba(30, 0, 50, 0.6); /* Fundo roxo escuro transparente */
+    border: 1px solid var(--cor002); /* Borda com a cor azul-roxa */
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2); /* Sombra suave */
+}
+
+.service-item:hover {
+    transform: translateY(-10px) scale(1.02); /* Efeito de levitar e leve aumento */
+    box-shadow: 0 15px 30px rgba(255, 0, 255, 0.4); /* Sombra mais forte no hover */
+    background: rgba(40, 0, 60, 0.8); /* Fundo um pouco mais opaco no hover */
+}
+
+.service-item i {
+    font-size: 4em; /* Tamanho do ícone */
+    color: var(--cor004); /* Cor azul vibrante para o ícone */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 174, 239, 0.5); /* Sombra no ícone */
+}
+
+.service-item h3 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+/* --- Responsividade para a Seção de Serviços --- */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 15px; /* Reduz padding em tablets */
+    }
+
+    .services-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta colunas para tablets */
+        gap: 20px;
+    }
+
+    .service-item {
+        padding: 25px;
+    }
+
+    .service-item i {
+        font-size: 3.5em;
+        margin-bottom: 15px;
+    }
+
+    .service-item h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        padding: 40px 10px; /* Reduz padding em celulares */
+    }
+
+    .services-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma única coluna em celulares */
+        gap: 15px;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .service-item i {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .service-item h3 {
+        font-size: 1.2em;
+    }
+}
+/* Seção Nossa Filosofia */
+.nossa-filosofia {
+    padding: 40px 0 80px;
+    background-image: url(assets/Materiais\ da\ Marca.png);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+}
+/*Footer*/
+footer {
+  padding: 30px 4%;
+  background-color: var(--cor001);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 40px 10px #ffffff1f;
+}
+
+footer .interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+footer .linha-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer .bloco-logo img {
+  width: 60px;
+  height: auto;
+}
+
+footer .botao-rede-social {
+  display: flex;
+  gap: 15px;
+}
+
+footer .botao-rede-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor003);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+footer .botao-rede-social a:hover {
+  transform: scale(1.1);
+  background-color: #9514af;
+}
+
+footer .linha-footer p {
+  font-size: 14px;
+  margin: 5px 10px;
+}
+
+footer .linha-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .linha-footer a:hover {
+  text-decoration: underline;
+}
+/* --- Responsividade para a Página "Saiba Mais" --- */
+
+@media (max-width: 768px) {
+    .saiba-mais-content {
+        padding-top: 100px; /* Ajuste para header menor em tablets */
+    }
+    .introducao-saiba-mais{
+        background-size: cover;
+    }
+    .saiba-mais-content h1 {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+    .saiba-mais-content h2 {
+        font-size: 1.8em;
+    }
+
+    .desenvolvedora-card {
+        flex-direction: column; /* Em coluna em tablets */
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .desenvolvedora-card:nth-child(even) { /* Remove a inversão para tablets */
+        flex-direction: column;
+    }
+
+    .dev-img {
+        width: 150px; /* Imagem menor */
+        height: 150px;
+    }
+
+    .dev-info h3 {
+        text-align: center; /* Centraliza o nome */
+        font-size: 1.5em;
+    }
+
+    .dev-info p {
+        text-align: center; /* Centraliza o texto */
+        font-size: 1rem;
+    }
+
+    .dev-habilidades {
+        justify-content: center; /* Centraliza as habilidades */
+    }
+}
+
+@media (max-width: 480px) {
+    .saiba-mais-content {
+        padding-top: 80px; /* Ajuste para header menor em celulares */
+    }
+
+    .saiba-mais-content .container {
+        padding: 15px;
+    }
+
+    .saiba-mais-content h1 {
+        font-size: 1.8em;
+    }
+    .saiba-mais-content h2 {
+        font-size: 1.6em;
+    }
+
+    .desenvolvedora-card {
+        padding: 15px;
+    }
+
+    .dev-img {
+        width: 120px; /* Imagem ainda menor */
+        height: 120px;
+    }
+
+    .dev-info h3 {
+        font-size: 1.3em;
+    }
+
+    .dev-info p {
+        font-size: 0.9rem;
+    }
+
+    .dev-habilidades li {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+}
+    </style>
+    <title>Mkverse</title>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Ínicio</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="saiba-mais-content">
+        <section class="introducao-saiba-mais">
+            <div class="container">
+                <h1>Conheça a Mkverse</h1>
+                <p>Aqui na Mkverse, somos apaixonados por transformar ideias em realidade digital. Nossa missão é impulsionar o sucesso de outras marcas através de soluções de desenvolvimento inovadoras e personalizadas.</p>
+                <p>É um sonho que não cabe num caderno nem em uma ideia só. Somos Marianna e Kauane, duas mentes inquietas e apaixonadas por criar, transformar e impulsionar. Da nossa amizade nasceu o MKverse: um universo criativo onde marcas ganham vida soluções para quem quer crescer com autenticidade encantando e marcando presença. Se você quer mais do que um serviço, se você quer impacto, presença e alma, vem com a gente.
+ A MKverse é pra você também.</p>
+            </div>
+        </section>
+
+        <section class="equipe-mkverse">
+            <div class="container">
+                <h2>Nossas Desenvolvedoras</h2>
+                <div class="desenvolvedora-card">
+                    <div class="dev-img">
+                        <img src="assets/foto_kau.jpg" alt="Foto da Desenvolvedora 2"> </div>
+                    <div class="dev-info">
+                        <h3>Kauane Tamara</h3> <p>Trabalha com UI/UX e desenvolvimento front-end, focada em criar experiências memoráveis para os clientes. Apaixonada por design responsivo e acessibilidade, garantindo que cada material da sua marca seja bonito e funcional para todos.</p>
+                        <ul class="dev-habilidades">
+                            <li>UI/UX Design</li>
+                            <li>Figma</li>
+                            <li>Front-end</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="desenvolvedora-card">
+                    <div class="dev-img">
+                        <img src="assets/fotoMari2.jpeg" alt="Foto da Desenvolvedora 1"> </div>
+                    <div class="dev-info">
+                        <h3>Marianna Fernandes</h3> <p>Desenvolvedora Full-Stack com paixão por interfaces intuitivas e performance otimizada. Experiente em criar soluções robustas e escaláveis, sempre buscando as melhores práticas de desenvolvimento.</p>
+                        <ul class="dev-habilidades">
+                            <li>Front-end</li>
+                            <li>UI/UX Design</li>
+                            <li>Python</li>
+                            <li>PHP</li>
+                            <li>IA</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+        <section class="services-section" id="servicos"> <div class="container">
+        <h2>MKverse serviços</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <i class="bi bi-megaphone"></i> <h3>Marketing</h3>
+            </div>
+            <div class="service-item">
+                <i class="bi bi-lightbulb"></i> <h3>Identidade Visual</h3>
+            </div>
+            <div class="service-item">
+                <i class="bi bi-pencil-square"></i> <h3>Criação de Conteúdo</h3>
+            </div>
+            <div class="service-item">
+                <i class="bi bi-people"></i> <h3>Gestão de Marcas</h3>
+            </div>
+            <div class="service-item">
+                <i class="bi bi-globe"></i> <h3>Desenvolvimento Web</h3>
+            </div>
+            <div class="service-item">
+                <i class="bi bi-laptop"></i> <h3>Desenvolvimento de Software</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="nossa-filosofia">
+            <div class="container">
+                <h2>Nosso compromisso</h2>
+                <p>Na Mkverse, acreditamos que a chave para o sucesso é a colaboração. Trabalhamos em conjunto com nossos clientes, transformando suas ideias em soluções digitais que realmente fazem a diferença. Valorizamos a criatividade, buscando sempre as tecnologias mais recentes e as melhores abordagens para cada desafio.</p>
+                <p>Nosso compromisso é com a qualidade. Desde o primeiro contato com o cliente até a entrega final, mantemos uma comunicação clara e um processo de desenvolvimento eficiente, garantindo resultados que superam as expectativas.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5543999317283&text&type=phone_number&app_absent=0" class="btn-mkverse">Fale conosco!</a>
+            </div>
+            
+        </section>
+    </main>
+     <footer>
+  <div class="interface" id="contato">
+    <div class="linha-footer">
+      <div class="bloco-logo">
+        <img src="assets/MK verse.png" alt="Logo MKverse" width="80px">
+      </div>
+      <div class="botao-rede-social">
+        <a href="https://api.whatsapp.com/send/?phone=5543999317283&text&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/mkv3rse?"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="linha-footer">
+      <p><i class="bi bi-envelope-at-fill"></i> <a href="mailto:mkv3rse@gmail.com">mkv3rse@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+    <script src="script.js"></script> </body>
+</html>

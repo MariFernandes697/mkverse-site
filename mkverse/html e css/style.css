@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Inconsolata:wght@200..900&family=Playwrite+CU:wght@100..400&family=Sevillana&family=Ysabeau+SC:wght@1..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inconsolata", monospace;
+}
+:root{
+    --cor000: #000001;
+    --cor001: #01021a;
+    --cor002: #795dff;
+    --cor003: #b627d4;
+    --cor004: #00aeef; 
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    background: var(--cor001);
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+header {
+    width: 100%;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
+    justify-content: center; /* Centraliza os itens quando quebram linha */
+}
+
+.menu li a {
+    color: #fff;
+    /* padding-left: 100px; */ /* Removido para melhor responsividade */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Inconsolata', monospace;
+    padding: 5px 10px; /* Adicionado padding para melhor área de clique */
+}
+
+.menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    transition: width 0.3s ease;
+}
+
+.menu li a:hover::after {
+    width: 100%;
+    /* padding-left: 0px; */ /* Removido, não é necessário aqui */
+}
+
+.menu li a:hover {
+    color: #e100ff;
+}
+
+.banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+    display: flex; /* Adicionado para alinhar o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudo-banner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna em telas menores */
+    align-items: center; /* Centraliza os itens na coluna */
+    text-align: center;
+    gap: 40px; 
+    padding: 10% 40px; /* Ajuste o padding para telas menores */
+    width: 100%; /* Garante que ocupe a largura total */
+}
+
+.conteudo-banner .txt{
+    text-align: center; /* Alinha o texto ao centro para telas menores */
+    margin: 20px 4%; /* Ajuste a margem para telas menores */
+}
+.conteudo-banner .txt h1{
+    font-size: 2em;
+    color: var(--cor004);
+    font-family: 'Inconsolata', monospace;
+}
+.conteudo-banner .txt h1 span{
+    font-size: 2.0em;
+}
+.conteudo-banner .txt p{
+    color: #fff;
+    font-size: 24px; /* Reduz o tamanho da fonte para telas menores */
+    line-height: 1.5; /* Melhora a legibilidade */
+}
+
+/*Estilização do botão*/
+.btn-mkverse {
+    display: inline-block;
+    padding: 15px 30px; /* Ajuste o padding para telas menores */
+    margin-top: 20px;
+    font-size: 1rem; /* Reduz o tamanho da fonte */
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #7f00ff, #e100ff);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-mkverse:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/*Estilização da imagem*/
+.img-banner img { /* Corrigido o seletor para .img-banner img */
+    max-width: 100%; /* Torna a imagem responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 20px;
+}
+
+/* --- Media Queries --- */
+
+/* Para telas maiores (desktops) */
+@media (min-width: 769px) {
+    .conteudo-banner {
+        flex-direction: row; /* Volta a exibir lado a lado em telas maiores */
+        text-align: left; /* Alinha o texto à esquerda novamente */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: flex-start; /* Alinha os itens ao topo */
+    }
+
+    .conteudo-banner .txt {
+        text-align: justify; /* Volta ao alinhamento justificado */
+        margin: 150px 4%;
+    }
+
+    .menu ul {
+        justify-content: flex-end; /* Alinha o menu à direita */
+    }
+
+    .menu li a {
+        padding-left: 100px; /* Retorna o padding original */
+        font-size: 1.1rem;
+    }
+
+    .conteudo-banner .txt p{
+        font-size: 28px; /* Volta ao tamanho original da fonte */
+    }
+
+    .btn-mkverse {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+
+    .img-banner img {
+        max-width: 500px; /* Tamanho original para desktops */
+        height: 500px;
+    }
+}
+
+/* Para tablets e telas médias */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* Reduz o padding do cabeçalho */
+    }
+
+    .menu ul {
+        gap: 20px; /* Reduz o espaçamento entre os itens do menu */
+    }
+
+    .menu li a {
+        font-size: 1rem; /* Reduz o tamanho da fonte do menu */
+    }
+
+    .conteudo-banner {
+        flex-direction: column; /* Sempre em coluna */
+        padding: 80px 20px 20px; /* Ajuste o padding superior para não sobrepor o header */
+        gap: 20px;
+    }
+
+    .conteudo-banner .txt h1 {
+        font-size: 1.8em;
+    }
+    .conteudo-banner .txt h1 span {
+        font-size: 1.8em;
+    }
+
+    .conteudo-banner .txt p {
+        font-size: 20px; /* Reduz ainda mais a fonte do parágrafo */
+    }
+
+    .img-banner img {
+        max-width: 80%; /* Ajusta o tamanho da imagem para tablets */
+    }
+}
+
+/* Para celulares e telas pequenas */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .menu ul {
+        flex-direction: column; /* Menu em coluna para telas muito pequenas */
+        align-items: center; /* Centraliza os itens do menu */
+        gap: 10px;
+    }
+
+    .menu li a {
+        padding-left: 0; /* Remove padding lateral no menu */
+        font-size: 0.9rem;
+    }
+
+    .conteudo-banner {
+        padding: 60px 15px 15px; /* Mais ajustes de padding */
+        gap: 15px;
+    }
+
+    .conteudo-banner .txt h1 {
+        font-size: 1.5em;
+    }
+    .conteudo-banner .txt h1 span {
+        font-size: 1.5em;
+    }
+
+    .conteudo-banner .txt p {
+        font-size: 16px; /* Fonte menor para celulares */
+    }
+
+    .btn-mkverse {
+        padding: 10px 20px; /* Botão menor */
+        font-size: 0.9rem;
+    }
+
+    .img-banner img {
+        max-width: 90%; /* A imagem ocupa quase toda a largura */
+    }
+}
