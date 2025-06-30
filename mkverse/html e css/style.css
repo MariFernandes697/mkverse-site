@@ -233,9 +233,9 @@ canvas {
 }
 
 /* Para celulares e telas pequenas */
-@media (max-width: 480px) {
+@media (max-width: 470px) {
     header {
-        display: none;
+        padding: 10px 15px;
     }
 
     .menu ul {
