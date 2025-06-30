@@ -233,7 +233,7 @@ canvas {
 }
 
 /* Para celulares e telas pequenas */
-@media (max-width: 487px) {
+@media (max-width: 480px) {
     header {
         padding: 10px 15px;
     }
